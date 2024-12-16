@@ -1,0 +1,119 @@
+@extends('core::layouts.master')
+@php
+    $page_id='dormitory_billings';
+    $page_name='เพิ่ม บิล/การเงิน';
+    $page_title='เพิ่ม บิล/การเงิน';
+    $dormitory_name=$dormitory->name;
+    $dormitory_code=$dormitory->code;
+@endphp
+@section('content')
+<div class="row justify-content-center">
+    <div class="col-sm-8 col-md-5">
+        <div class="card card-table" style="border-radius: 15px;">
+            <div class="card-header text-center">เพิ่ม บิล/การเงิน</div>
+            <div class="card-body" style="padding: 20px;">
+                <form method="POST" action="{{route('dormitorys.users.insert',$dormitory->code)}}" enctype="multipart/form-data">
+                    @csrf
+                    {{-- <div class="form-group">
+                        <label for="username">ชื่อผู้ใช้</label>
+                        <input type="text" name="username" id="username" placeholder="กรุณาใส่ชื่อผู้ใช้" value="{{ old('username') }}" class="form-control" required>
+                        <input type="hidden" name="id" id="id" value="{{ old('id') }}">
+                        @if ($errors->has('username'))
+                            <div class="text-danger">{{ $errors->first('username') }}</div>
+                        @endif
+                    </div>
+                    <input type="hidden" name="dormitorys_id" id="dormitorys_id" value="{{$dormitory->id}}">
+                    <div class="form-group">
+                        <label for="name">ชื่อ</label>
+                        <input type="text" name="name" id="name" placeholder="กรุณาใส่ชื่อ" value="{{ old('name') }}" class="form-control" pattern="[A-Za-z0-9ก-๙\s]+" title="กรุณาใส่เฉพาะตัวอักษรและตัวเลข"required>
+                        @if ($errors->has('name'))
+                            <div class="text-danger">{{ $errors->first('name') }}</div>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="email">อีเมล</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="กรุณาใส่อีเมล" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imgpro">รูปประจำตัว</label>
+                        <img src="" id="imgpro-preview" style="width: 50px; height: 50px;  display: none; margin-bottom: 10px;">
+                        <input type="file" name="imgpro" id="imgpro" class="form-control" accept="image/*"  onchange="previewImage(event)">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">รหัสผ่าน</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="กรุณาใส่รหัสผ่าน" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="room_id">รหัสห้อง</label>
+                        <select name="room_id" id="room_id" class="form-control" required>
+                            <option value="">กรุณาเลือกห้อง</option>
+                            @foreach($rooms as $room)
+                                <option value="{{ $room->id }}" {{ old('room_id') == $room->id ? 'selected' : '' }}>{{ $room->name }}</option>
+                                @endforeach
+                        </select>
+                        @if ($errors->has('room_id'))
+                            <div class="text-danger">{{ $errors->first('room_id') }}</div>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทร</label>
+                        <input type="text" name="phone" id="phone" placeholder="กรุณาใส่เบอร์โทร" value="{{ old('phone') }}" maxlength="10" pattern="\d*" title="กรุณาใส่เฉพาะตัวเลข" class="form-control" required>
+                        @if ($errors->has('phone'))
+                            <div class="text-danger">{{ $errors->first('phone') }}</div>
+                        @endif
+                    </div> --}}
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-primary btn-rounded">
+                            <i class="mdi mdi-account-add"></i> บันทึก
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="{{ url()->previous() }}" class="btn btn-secondary btn-rounded text-dark" style="float:right; margin-right: 20px;">
+            <i class="mdi mdi-undo"></i> ย้อนกลับ
+        </a>
+    </div>
+</div>
+
+@endsection
+
+@section('css')
+<style>
+    input, select {
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+  
+    .btn-primary {
+        margin-right: 10px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-control {
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    .btn-primary {
+        margin-right: 10px;
+    }
+    .card {
+        margin: 5px auto;
+    }
+    .card-header {
+        text-align: center;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+</style>
+@endsection
+
+@section('js_script')
+@endsection

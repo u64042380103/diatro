@@ -1,0 +1,11 @@
+{
+    "name": "ApiDevice",
+    "alias": "apidevice",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ApiDevice\\Providers\\ApiDeviceServiceProvider"
+    ],
+    "files": []
+}

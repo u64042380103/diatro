@@ -1,0 +1,21 @@
+@extends('core::layouts.master')
+@php
+    $page_id='page_id';
+    $page_name='page_name';
+    $page_title='page_title';
+@endphp
+@section('content')
+    {{-- coding html --}}
+@endsection
+
+@section('css')
+    {{-- coding css --}}
+@endsection
+
+@section('js_link')
+    {{-- coding js link--}}
+@endsection
+
+@section('js_script')
+    {{-- coding js script--}}
+@endsection

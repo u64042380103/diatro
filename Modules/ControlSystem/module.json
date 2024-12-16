@@ -1,0 +1,11 @@
+{
+    "name": "ControlSystem",
+    "alias": "controlsystem",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ControlSystem\\Providers\\ControlSystemServiceProvider"
+    ],
+    "files": []
+}

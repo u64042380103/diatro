@@ -1,0 +1,11 @@
+{
+    "Core": true,
+    "Auth": true,
+    "User": true,
+    "UserGroup": true,
+    "ControlSystem": true,
+    "Dormitory": true,
+    "ApiDevice": true,
+    "Schedule": true,
+    "Setting": true
+}

@@ -1,0 +1,11 @@
+{
+    "name": "UserGroup",
+    "alias": "usergroup",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\UserGroup\\Providers\\UserGroupServiceProvider"
+    ],
+    "files": []
+}
